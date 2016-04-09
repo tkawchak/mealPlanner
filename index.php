@@ -1,4 +1,6 @@
+<?php
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +60,7 @@
 	<div class="row">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6 text-justify">
-			
+			<p> <?php echo "Hello World"; ?> </p>
 		<div class="col-sm-3"></div>
 	</div>
 </div>

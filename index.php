@@ -29,13 +29,49 @@
 <script>
 $(document).on("pagecreate",function(){
   $("img").on("swiperight",function(){
-    $(this).hide();
+    $(this).hide(); add(1,3);
   });
   $("p").on("swipeleft", function(){
-     $(this).hide();
+     $(this).hide(); add(5,6);
   });
 });
+
+function add(a, b)
+{
+	var c = a + b;
+	document.getElementById("answer").innerHTML = c;
+}
 </script>
+
+<script>
+        $(document).on("pagecreate", function(){
+            $("img").on("swiperight", function(e){
+
+                // as you have used hyperlink(a tag), this prevent to redirect to another/same page
+                e.preventDefault();
+
+                // get values from textboxs  
+                var uName = $('#userName').val();
+                var mailId = $('#addressemailId').val();
+                var mobNum = $('#userContactNumber').val();
+
+                $.ajax({
+                    url:"localhost/insertFood.php",
+                    type:"GET",
+                    dataType:"json",
+                    data:{type:"insert",Name:uName, Email:mailId, Mob_Num:mobNum},
+                    //type: should be same in server code, otherwise code will not run
+                    ContentType:"application/json",
+                    success: function(response){
+                        alert(JSON.stringify(response));
+                    },
+                    error: function(err){
+                        alert(JSON.stringify(err));
+                    }
+                })
+            });
+        });
+    </script>
 </head>
 
 <!-- CONTENT OF PAGE, CONSULT BOOTSTRAP STYLE GUIDE WHEN ASSIGNING CLASSES -->
@@ -80,28 +116,33 @@ $(document).on("pagecreate",function(){
 		<div class="col-sm-6 text-justify">
 			<p> <?php echo "Weclcome to mealPlanner, a mobile website that allows you to automate your meal selecting process."; ?> </p>
 			<img src="bear.jpg" />
+			<p id="answer"><p>
 		<div class="col-sm-3"></div>
+		<div id="picture">
+		
+		</div>
 	</div>
 </div>
 
 
 <script>
 
-var xmlhttp;
-
 $( document ).ready(function() {
     updatePhoto();
 });
 
 function updatePhoto() {
-	var photo;
+	var ph;
 	$.get( "getPhoto.php", function( data ) {
-		photo = data.image;
-		$("#photo").attr("src", photo);
+		$("#picture").innerHTML(data.image);
+		console.log(data.image);
+		ph = data.image;
+		$("#photo").attr("src", ph);
 	}, "json" );
 	
 }
 </script>
+
 
 
 </main>

@@ -60,7 +60,7 @@
 	<div class="row">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6 text-justify">
-			<p> <?php echo "Hello World"; ?> </p>
+			<p> <?php echo "Weclcome to mealPlanner, a mobile website that allows you to automate your meal selecting process."; ?> </p>
 		<div class="col-sm-3"></div>
 	</div>
 </div>

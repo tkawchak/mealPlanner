@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 
 <!-- WEBPAGE DATA -->
-<title>Meal Planner</title>
+<title>Food List</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="">
@@ -15,19 +15,8 @@
 <!-- REQUIRED FOR BOOTSTRAP AND JQUERY -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script>
-$(document).on("pagecreate",function(){
-  $("img").on("swiperight",function(){
-    $(this).hide();
-  });
-  $("p").on("swipeleft", function(){
-     $(this).hide();
-  });
-});
-</script>
 </head>
 
 <!-- CONTENT OF PAGE, CONSULT BOOTSTRAP STYLE GUIDE WHEN ASSIGNING CLASSES -->
@@ -68,7 +57,6 @@ $(document).on("pagecreate",function(){
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6 text-justify">
 			<p> <?php echo "Weclcome to mealPlanner, a mobile website that allows you to automate your meal selecting process."; ?> </p>
-			<img src="bear.jpg" />
 		<div class="col-sm-3"></div>
 	</div>
 </div>

@@ -1,3 +1,11 @@
+<?php session_start(); ?>
+
+<?php
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,6 +72,9 @@ $(document).on("pagecreate",function(){
 <main>
 <div class="container">
 	<!-- profile image -->
+	<img src="" id="photo" class="img-responsive img-thumbnail img-square center-block" alt="food" style="max-height: 300px;">
+	
+	
 	<div class="row">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6 text-justify">
@@ -72,6 +83,27 @@ $(document).on("pagecreate",function(){
 		<div class="col-sm-3"></div>
 	</div>
 </div>
+
+
+<script>
+
+var xmlhttp;
+
+$( document ).ready(function() {
+    updatePhoto();
+});
+
+function updatePhoto() {
+	var photo;
+	$.get( "getPhoto.php", function( data ) {
+		photo = data.image;
+		$("#photo").attr("src", photo);
+	}, "json" );
+	
+}
+</script>
+
+
 </main>
 
 </body>

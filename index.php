@@ -46,7 +46,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Explore</a></li>
         <li><a href="">Food List</a></li>
-		<li><a href="">Generate List</a></li>
+		<li><a href="FoodList.php">Generate List</a></li>
       </ul>
     </div>
   </div>

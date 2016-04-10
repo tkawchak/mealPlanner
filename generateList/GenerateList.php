@@ -58,10 +58,17 @@
     <div class="col-sm-3"></div>
     <div class="col-sm-6 text-justify">
 	
+		<div class="jumbotron">
+		<h1>Create Shopping List</h1>
+		<p>Select the number of meals that you would like and we will generate a shopping list for that many unique meals!</p>
+		</div>
+		
+		<br/>
+	
 		<form role="form" action="./makeList.php" method="post">
 			<div class="form-group">
 			<label for="numMeals">Number of Meals:</label>
-				<select name="numberOfMeals">
+				<select class="dropdown align-left" name="numberOfMeals">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -69,41 +76,10 @@
 					<option value="5">5</option>
 					<option value="6">6</option>
 					<option value="7">7</option>
-				</select><br>
-        <button  type="submit" id="generate" class="btn btn-succsess btn-block"> generate </button>
+				</select>
+        <button  type="submit" id="generate" class="btn btn-succsess text-left"> generate </button>
     </form>
 	
-
-      <!-- custmer id based on name. -->
-      <p> <?php echo "Generated List";
-            $servername = "localhost";
-            $username = "mealuser";
-            $password = "JyCCCFxBr3YQFyuW";
-            $dbname = "mealplanner";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error){
-                die("Connection failed: " . $conn->connect_error);
-            } 
-            else{
-              echo "connection worked";
-            }
-            
-            $sql = "SELECT name FROM customer";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-            // output data of each row
-              while($row = $result->fetch_assoc()) {
-                echo "id: " . $row["name"]. "<br>";
-              }
-            } else {
-                echo "0 results";
-              }
-              $conn->close();
-              ?> </p>
     <div class="col-sm-3"></div>
   </div>
 </div>

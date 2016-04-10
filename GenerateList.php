@@ -56,7 +56,42 @@
   <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-6 text-justify">
-      <p> <?php echo "Generate List"; ?> </p>
+      <!-- custmer id based on name. -->
+      <p> <?php echo "Generated List";
+            $servername = "localhost";
+            $username = "mealuser";
+            $password = "1234";
+            $dbname = "mealplanner";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error){
+                die("Connection failed: " . $conn->connect_error);
+            } 
+            else{
+              echo "connection worked";
+            }
+            /*
+            $sql = "SELECT id, firstname, lastname FROM MyGuests";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) 
+                {
+                    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+                }
+            } 
+            else 
+            {
+                echo "0 results";
+            }
+            $conn->close();
+            */
+            ?>
+
+      ?> </p>
     <div class="col-sm-3"></div>
   </div>
 </div>

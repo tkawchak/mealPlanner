@@ -8,7 +8,7 @@ $files = scandir(getcwd());
 $images = array();
 
 for ($i = 0; $i < sizeof($files); $i = $i + 1) {
-	if (strpos($files[$i] != false)) {
+	if (strpos($files[$i], ".jpg") != false) {
 		array_push($images, ($files[$i]));
 	}
 }
@@ -16,7 +16,7 @@ for ($i = 0; $i < sizeof($files); $i = $i + 1) {
 // return one of the images
 $image = $images[rand(0, sizeof($images)) - 1];
 
-echo $image;
+//echo $image;
 
 $outp = '{"Name":"' . $image . '",';
 

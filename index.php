@@ -101,18 +101,18 @@ function myFunction(response) {
     console.log(out);
 }
 
-$( document ).ready(function() {
-    updatePhoto();
-});
+// $( document ).ready(function() {
+    // updatePhoto();
+// });
 
-function updatePhoto() {
-	var photo;
-	$.get( "getPhoto.php", function( data ) {
-		photo = data.image;
-		$("#photo").attr("src", photo);
-	}, "json" );
+// function updatePhoto() {
+	// var photo;
+	// $.get( "getPhoto.php", function( data ) {
+		// photo = data.image;
+		// $("#photo").attr("src", photo);
+	// }, "json" );
 	
-}
+// }
 </script>
 
 

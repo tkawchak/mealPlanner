@@ -60,7 +60,7 @@
       <p> <?php echo "Generated List";
             $servername = "localhost";
             $username = "mealuser";
-            $password = "1234";
+            $password = "JyCCCFxBr3YQFyuW";
             $dbname = "mealplanner";
 
             // Create connection
@@ -72,7 +72,7 @@
             else{
               echo "connection worked";
             }
-            /*
+            
             $sql = "SELECT id, firstname, lastname FROM MyGuests";
             $result = $conn->query($sql);
 
@@ -87,10 +87,8 @@
             {
                 echo "0 results";
             }
-            $conn->close();
             */
-            ?>
-
+            $conn->close();
       ?> </p>
     <div class="col-sm-3"></div>
   </div>

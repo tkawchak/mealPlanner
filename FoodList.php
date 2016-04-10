@@ -57,6 +57,19 @@
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6 text-justify">
 			<form role="form" action="" method="get">
+			<?php 
+			<div class="form-group">
+				<label for="usr">Food:</label>
+				<input type="text" class="form-control" required="true" id="food" name="food" placeholder="Enter food to delete">
+			</div>
+			<div class="extraInfo"></div>
+			<div class="userOptions">
+				<button type="submit" id="update" name="update" class="btn btn-success btn-block">Delete</button>
+			</div>
+			?>
+		  </form>
+			
+			<form role="form" action="" method="get">
 			<div class="form-group">
 				<label for="usr">Food:</label>
 				<input type="text" class="form-control" required="true" id="food" name="food" placeholder="Enter food to delete">
@@ -80,6 +93,28 @@
     });
   });
 	
+$(function(document).on("pagecreate", function() {
+	$.get("create_food_list.php");
+});
+
+var xmlhttp = new XMLHttpRequest();
+var out;
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        myFunction(xmlhttp.responseText);
+    }
+}
+xmlhttp.open("GET", "getPhoto.php", true);
+xmlhttp.send();
+}
+function myFunction(response) {
+    var arr = JSON.parse(response);
+    var i;
+
+    out = arr[0].Name; 
+	$("#photo").attr("src", out);
+    console.log(out);
+}
 </script>
 
 </body>

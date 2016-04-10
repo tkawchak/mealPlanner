@@ -23,7 +23,7 @@ else{
 
 
 // query for id of image
-$query = "SELECT id FROM meal WHERE image=?";
+$query = "SELECT id FROM meal WHERE photo_path=?";
 
 $stmt = $conn->prepare($query);
 $stmt->bind_param("s", $food);
@@ -34,10 +34,14 @@ $imgID = NULL;
 $stmt->bind_result($imgID);
 $stmt->fetch();
 
-echo $imgID;
+//echo $imgID;
 
 
 // query to insert into the image into the database
+$query = "INSERT INTO customer_meal (customer_id, food_id) VALUES (?, ?)";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("ii", 1, $imgID);
+$stmt->execute();
 
 $conn->close();
 

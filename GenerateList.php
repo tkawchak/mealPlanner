@@ -73,23 +73,19 @@
               echo "connection worked";
             }
             
-            $sql = "SELECT id, firstname, lastname FROM MyGuests";
+            $sql = "SELECT name FROM customer";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-                // output data of each row
-                while($row = $result->fetch_assoc()) 
-                {
-                    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-                }
-            } 
-            else 
-            {
+            // output data of each row
+              while($row = $result->fetch_assoc()) {
+              echo "id: " . $row["id"]. "<br>";
+              }
+              } else {
                 echo "0 results";
-            }
-            */
-            $conn->close();
-      ?> </p>
+              }
+              $conn->close();
+              ?> </p>
     <div class="col-sm-3"></div>
   </div>
 </div>

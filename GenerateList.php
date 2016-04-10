@@ -60,7 +60,7 @@
 		<form role="form" action="./makeList.php" method="post">
 			<div class="form-group">
 			<label for="numMeals">Number of Meals:</label>
-				<select>
+				<select name="numberOfMeals">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -68,7 +68,9 @@
 					<option value="5">5</option>
 					<option value="6">6</option>
 					<option value="7">7</option>
-				</select>
+				</select><br>
+        <button  type="submit" id="generate" class="btn btn-succsess btn-block"> generate </button>
+    </form>
 	
 
       <!-- custmer id based on name. -->

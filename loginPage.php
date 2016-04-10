@@ -1,3 +1,11 @@
+<?php session_start(); ?>
+
+<?php
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,13 +71,35 @@
 		  <form role="form" action="./" method="post">
 			<div class="form-group">
 				<label for="usr">Username:</label>
-				<input type="text" class="form-control" required="true" id="usr" name="usr" placeholder="Enter your username">
+				<select>
+				<?php
+					$servername = "localhost";
+					$username = "mealuser";
+					$password = "JyCCCFxBr3YQFyuW";
+					$dbname = "mealplanner";
+
+					$conn = new mysqli($servername, $username, $password, $dbname);
+						// Check connection
+						if ($conn->connect_error){
+							die("Connection failed: " . $conn->connect_error);
+						} 
+						else{
+						  //echo "connection worked";
+						}
+						
+						$sql = "SELECT id, name FROM customer";
+						$result = $conn->query($sql);
+
+						for($i = 0; $i < $num; $i++)
+						{
+							$row = $result->fetch_assoc();
+							echo "<option value='" . $row["id"] "'>" . $row["name"] . "</option>";
+						}
+					$conn->close();
+				?>
+				</select>
+			<button  type="submit" id="generate" class="btn btn-succsess btn-block">Select User</button>
 			</div>
-			<div class="form-group required">
-			  <label for="pwd">Password:</label>
-			  <input type="password" class="form-control" id="pwd" required="true" name="pwd" placeholder="Enter your password">
-			</div>
-			<div class="extraInfo"></div>
 			
 			<br/>
 			

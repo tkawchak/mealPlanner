@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<?php session_start(); ?>
 </head>
 
 <!-- CONTENT OF PAGE, CONSULT BOOTSTRAP STYLE GUIDE WHEN ASSIGNING CLASSES -->
@@ -58,16 +59,52 @@
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6 text-justify">
 			<form role="form" action="" method="get">
-			<?php 
-			<div class="form-group">
-				<label for="usr">Food:</label>
-				<input type="text" class="form-control" required="true" id="food" name="food" placeholder="Enter food to delete">
-			</div>
-			<div class="extraInfo"></div>
-			<div class="userOptions">
-				<button type="submit" id="update" name="update" class="btn btn-success btn-block">Delete</button>
-			</div>
-			?>
+			<?php
+			$servername = "localhost";
+			$username = "mealuser";
+			$password = "JyCCCFxBr3YQFyuW";
+			$dbname = "mealplanner";
+
+			if(isset($_SESSION["user"]))
+				$user = $_SESSION["user"];
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+
+			$query = "SELECT food_id FROM customer_meal WHERE customer_id=?";
+			$stmt = $conn->prepare($query);
+			$stmt->bind_param("i", $user);
+			$stmt->execute();
+
+			$id=NULL;
+			$stmt->bind_result($id);
+			$names = array();
+
+			while($stmt->fetch()) {
+					
+					$query = "SELECT name FROM meal where id=?";
+					
+					$conn1 = new mysqli($servername, $username, $password, $dbname);
+					
+					$stmt1 = $conn1->prepare($query);
+					$stmt1->bind_param("i", $id);
+					$stmt1->execute();
+					
+					$food_name = NULL;
+					$stmt1->bind_result($food_name);
+					$stmt1->fetch();
+					array_push($names, $food_name);
+					echo "<div><p id=\"food\">" . $food_name . "</p><button type=\"submit\" id=\"update\" name=\"update\" class=\"btn btn-danger btn-block\">Delete</button></div>";
+					$conn1->close();
+					
+					
+				}
+			echo json_encode($names);
+
+			//echo $meal_id_list;
+			$conn->close();
+?>
+			<?/*
 		  </form>
 			
 			<form role="form" action="" method="get">
@@ -79,7 +116,7 @@
 			<div class="userOptions">
 				<button type="submit" id="update" name="update" class="btn btn-success btn-block">Delete</button>
 			</div>
-		  </form>
+		  </form>*/?>
 		<div class="col-sm-3"></div>
 	</div>
 </div>
@@ -93,11 +130,12 @@
 	  $.get("removeFood.php", {food: name});
     });
   });
-	
+	/*
 $(function(document).on("pagecreate", function() {
 	$.get("create_food_list.php");
 });
-
+*/
+function newImage(){
 var xmlhttp = new XMLHttpRequest();
 var out;
 xmlhttp.onreadystatechange=function() {
@@ -105,7 +143,7 @@ xmlhttp.onreadystatechange=function() {
         myFunction(xmlhttp.responseText);
     }
 }
-xmlhttp.open("GET", "getPhoto.php", true);
+xmlhttp.open("GET", "create_food_list.php", true);
 xmlhttp.send();
 }
 function myFunction(response) {

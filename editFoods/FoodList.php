@@ -73,7 +73,7 @@
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			$conn1 = new mysqli($servername, $username, $password, $dbname);
 			
-			$query = "SELECT food_id FROM customer_meal WHERE customer_id=?";
+			$query = "SELECT food_id FROM customer_meal WHERE customer_id=?;";
 			$stmt = $conn->prepare($query);
 			$stmt->bind_param("i", $user);
 			$stmt->execute();
@@ -82,14 +82,14 @@
 			$stmt->bind_result($id);
 			//$names = array();
 			
-			$query = "SELECT name FROM meal where id=?";
+			$query = "SELECT name FROM meal where id=?;";
 					
 			$stmt1 = $conn1->prepare($query);
-			
+			$stmt1->bind_param("i", $id);
 			while($stmt->fetch()) {
 					
 					
-					$stmt1->bind_param("i", $id);
+					
 					$stmt1->execute();
 					
 					$food_name = NULL;
@@ -105,7 +105,7 @@
 
 			//echo $meal_id_list;
 			$conn->close();
-			$conn1->close();
+			//$conn1->close();
 ?>
 		<div class="col-sm-3"></div>
 	</div>
@@ -123,7 +123,7 @@
   
 function del(id) {
 	$.get("removeFood.php", {food: id});
-	reload();
+	location.reload();
 }
   
 	/*

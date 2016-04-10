@@ -30,6 +30,10 @@
 $(document).on("pagecreate",function(){
   $("#photo").on("swiperight",function(){
     start(); //myFunction();
+	
+	// add code to add the image to a database of good food
+	
+	
   });
   $("p").on("swipeleft", function(){
      $(this).hide(); add(5,6);
@@ -109,8 +113,7 @@ $(document).on("pagecreate",function(){
 	<div class="row">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6 text-justify">
-			<p> <?php echo "Weclcome to mealPlanner, a mobile website that allows you to automate your meal selecting process."; ?> </p>
-			<img src="bear.jpg" />
+			<h1> <?php echo "Weclcome to mealPlanner, a mobile website that allows you to automate your meal selecting process."; ?> </h1>
 			<p id="answer"><p>
 		<div class="col-sm-3"></div>
 		<div id="picture">

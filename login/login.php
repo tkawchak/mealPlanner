@@ -4,6 +4,6 @@
 $userID = $_POST["user"];
 
 $_SESSION["user"] = $userID;
-header( 'Location: ./' ) ;
+header( 'Location: ../' ) ;
 
 ?>

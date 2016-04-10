@@ -8,10 +8,10 @@
 <meta charset="utf-8">
 
 <!-- WEBPAGE DATA -->
-<title>Meal Planner</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="author" content="">
+<title>Recipedia</title>
+<meta name="description" content="meal planner for meals">
+<meta name="keywords" content="meals, plan meals, recipes, recipedia">
+<meta name="author" content="Tom, Adam, Ben">
 <link rel="shortcut icon" href="./websiteIcon.ico">
 
 <!-- REQUIRED FOR BOOTSTRAP AND JQUERY -->
@@ -63,10 +63,10 @@ $(document).on("pagecreate",function(){
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Home</a></li>
-        <li ><a href="FoodList.php">Food List</a></li>
-        <li ><a href="GenerateList.php">Generate List</a></li>
-        <li class=""><a href="loginPage.php">Login Page</a></li>
+        <li class="active"><a href="./index.php">Home</a></li>
+        <li ><a href="./editFoods/FoodList.php">Food List</a></li>
+        <li ><a href="./generateList//GenerateList.php">Generate List</a></li>
+        <li class=""><a href="./login/loginPage.php">Login Page</a></li>
       </ul>
     </div>
   </div>
@@ -111,7 +111,7 @@ function myFunction(response) {
     var arr = JSON.parse(response);
     var i;
 
-    out = arr[0].Name; 
+    out = "./images/" + arr[0].Name; 
 	$("#photo").attr("src", out);
     console.log(out);
 }

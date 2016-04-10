@@ -7,7 +7,7 @@
 
 
 // get a list of images in the current directory
-$files = scandir(getcwd());
+$files = scandir(getcwd() . "/images/");
 
 $images = array();
 

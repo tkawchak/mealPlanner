@@ -93,7 +93,7 @@
 						for($i = 0; $i < $num; $i++)
 						{
 							$row = $result->fetch_assoc();
-							echo "<option value='" . $row[0] "'>" . $row[1] . "</option>";
+							echo "<option value='" . $row["id"] "'>" . $row["name"] . "</option>";
 						}
 					$conn->close();
 				?>

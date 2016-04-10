@@ -21,6 +21,4 @@ $image = $images[rand(0, sizeof($images) - 1)];
 $outp = '[{"Name":"' . $image . '"}]';
 
 echo $outp;
-
-//echo json_encode(array("image"=>"$image));
 ?>

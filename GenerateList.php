@@ -69,30 +69,8 @@
 					<option value="6">6</option>
 					<option value="7">7</option>
 				</select>
-				<label for="usr">Username:</label>
-				<input type="text" class="form-control" required="true" id="usr" name="usr" placeholder="Enter your username">
-			</div>
-			<div class="form-group required">
-			  <label for="pwd">Password:</label>
-			  <input type="password" class="form-control" id="pwd" required="true" name="pwd" placeholder="Enter your password">
-			</div>
-			<div class="extraInfo"></div>
-			
-			<br/>
-			
-			<div class="noUser">
-				<button type="submit" id="login" name="login" class="btn btn-success btn-block">Login</button>
-				<a id="newUser" class="btn btn-primary btn-block">New User?</a>
-				<button type="submit" id="register" name="register" class="extraInfo btn btn-primary btn-block">Submit</button>
-			</div>
-			<div class="userOptions">
-				<button type="submit" id="update" name="update" class="btn btn-success btn-block">Update Info</button>
-			</div>
-		  </form>
 	
-	
-	
-	
+
       <!-- custmer id based on name. -->
       <p> <?php echo "Generated List";
             $servername = "localhost";

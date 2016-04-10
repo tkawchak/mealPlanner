@@ -56,11 +56,31 @@
 	<div class="row">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6 text-justify">
-			<p> <?php echo "Foodlist"; ?> </p>
+			<form role="form" action="" method="get">
+			<div class="form-group">
+				<label for="usr">Food:</label>
+				<input type="text" class="form-control" required="true" id="food" name="food" placeholder="Enter food to delete">
+			</div>
+			<div class="extraInfo"></div>
+			<div class="userOptions">
+				<button type="submit" id="update" name="update" class="btn btn-success btn-block">Delete</button>
+			</div>
+		  </form>
 		<div class="col-sm-3"></div>
 	</div>
 </div>
 </main>
+
+<script>
+ $(function() {
+    $("#update").click(function() {
+      // validate and process form here
+	  var name = $("#food").val();
+	  $.get("removeFood.php", {food: name});
+    });
+  });
+	
+</script>
 
 </body>
 <!-- CLOSE THE PAGE -->

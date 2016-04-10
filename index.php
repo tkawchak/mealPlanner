@@ -29,14 +29,20 @@
 <script>
 $(document).on("pagecreate",function(){
   $("#photo").on("swiperight",function(){
-    start(); //myFunction();
-	
+	  
 	// add code to add the image to a database of good food
+	var image = $("#photo").attr("src");
 	
+	// execute a query to the database to add food item
+	$.get("addFood.php", {food: image});  
+	  
+    newImage();
 	
   });
   $("p").on("swipeleft", function(){
-     $(this).hide(); add(5,6);
+		 
+	newImage();	 
+	 
   });
 });
 </script>
@@ -125,7 +131,7 @@ $(document).on("pagecreate",function(){
 
 <script>
 
-function start(){
+function newImage(){
 var xmlhttp = new XMLHttpRequest();
 var out;
 xmlhttp.onreadystatechange=function() {

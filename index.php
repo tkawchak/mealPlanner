@@ -1,11 +1,5 @@
 <?php session_start(); ?>
 
-<?php
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +28,7 @@ $(document).on("pagecreate",function(){
 	var image = $("#photo").attr("src");
 	
 	// execute a query to the database to add food item
-	$.get("addFood.php", {food: image});  
+	$.get("addFood.php", {food: image});
 	  
     newImage();
 	

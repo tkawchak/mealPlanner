@@ -19,3 +19,5 @@ $query = "DELETE FROM customer_meal WHERE customer_id=1 AND food_id=(SELECT id F
 $stmt = $conn->prepare($query);
 $stmt->bind_param("s", $food);
 $stmt->execute();
+
+?>

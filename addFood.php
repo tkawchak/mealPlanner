@@ -4,8 +4,6 @@
 
 $food = $_GET["food"];
 
-$food = str_replace(".jpg", "", $food);
-
 // echo $food;
 
 $servername = "localhost";
@@ -25,8 +23,8 @@ else{
 
 
 // query for id of image
-query = "SELECT id FROM food WHERE image=?";
-$stmt = $conn->prepare(query);
+$query = "SELECT id FROM meal WHERE image=?";
+$stmt = $conn->prepare($query);
 $stmt->bind_param("s", $food);
 $stmt->execute();
 

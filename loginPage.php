@@ -60,13 +60,11 @@
 <!-- MAIN CONTENT FOR THE PAGE GOES HERE -->
 <main>
 <div class="container">
-	<!-- profile image -->
+	
 	<div class="row">
 		<div class="row">
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
-		
-			<div class="page-header userOptions text-center"><h3><?php echo "Welcome $user!";?></h3></div>
 		
 		  <form role="form" action="./" method="post">
 			<div class="form-group">
@@ -93,7 +91,7 @@
 						for($i = 0; $i < $num; $i++)
 						{
 							$row = $result->fetch_assoc();
-							echo "<option value='" . $row["id"] "'>" . $row["name"] . "</option>";
+							echo "<option value='" . $row["id"] . "'>" . $row["name"] . "</option>";
 						}
 					$conn->close();
 				?>

@@ -2,6 +2,10 @@
 
 <?php
 
+// MAKE SURE THAT NO IMAGES REPEAT IN HERE
+// REMOVE THE IMAGE FROM A LIST AFTER GENERATING IT
+
+
 // get a list of images in the current directory
 $files = scandir(getcwd());
 

@@ -93,6 +93,8 @@
 				<button  type="submit" id="user" class="btn btn-succsess btn-block"> Select User </button>
 		  </form>
 		  
+		  <br/>
+		  
 		  <form role="form" action="./newUser.php" method="post">
 				<div class="form-group">
 					<label for="usr">Username:</label>

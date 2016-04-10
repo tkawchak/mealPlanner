@@ -72,6 +72,7 @@ $(document).on("pagecreate",function(){
         <li class="active"><a href="index.php">Home</a></li>
         <li ><a href="FoodList.php">Food List</a></li>
         <li ><a href="GenerateList.php">Generate List</a></li>
+        <li class=""><a href="loginPage.php">Login Page</a></li>
       </ul>
     </div>
   </div>
@@ -123,15 +124,6 @@ function myFunction(response) {
  $( document ).ready(function() {
      newImage();
  });
-
-// function updatePhoto() {
-	// var photo;
-	// $.get( "getPhoto.php", function( data ) {
-		// photo = data.image;
-		// $("#photo").attr("src", photo);
-	// }, "json" );
-	
-// }
 </script>
 
 

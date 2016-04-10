@@ -19,7 +19,7 @@
             $sql = "SELECT name FROM meal";
             $result = $conn->query($sql);
 
-            $sql2 = "SELECT id FROM food_ingredient WHERE food_id=1";
+            $sql2 = "SELECT name FROM ingredient";
             $result2 = $conn->query($sql2);
 
             for($i = 0; $i < $num; $i++)
@@ -28,8 +28,13 @@
 				echo "meal " . ($i + 1) . ": ". $row["name"]. "<br>";
 			}
 
-			$row = $result2->fetch_assoc();
-			echo "<br>" . $row["id"];
+            echo "<br>" . "List of Ingredients" . "<br>";
+
+            for($i = 0; $i < $num; $i++)
+            {
+                $row = $result2->fetch_assoc();
+                echo "<br>" . $row["name"];
+            }
 
     $conn->close();
 ?>

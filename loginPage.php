@@ -43,8 +43,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li ><a href="index.php">Home</a></li>
-        <li class="active"><a href="FoodList.php">Food List</a></li>
+        <li class=""><a href="FoodList.php">Food List</a></li>
         <li ><a href="GenerateList.php">Generate List</a></li>
+        <li class="active"><a href="loginPage.php">Login Page</a></li>
       </ul>
     </div>
   </div>

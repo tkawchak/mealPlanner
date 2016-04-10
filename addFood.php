@@ -38,10 +38,10 @@ $stmt->fetch();
 
 
 // query to insert into the image into the database
-$query = "INSERT INTO customer_meal (customer_id, food_id) VALUES (?, ?)";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("ii", 1, $imgID);
-$stmt->execute();
+$query2 = "INSERT INTO customer_meal (customer_id, food_id) VALUES (?, ?)";
+$stmt2 = $conn->prepare($query);
+$stmt2->bind_param("ii", 1, $imgID);
+$stmt2->execute();
 
 $conn->close();
 

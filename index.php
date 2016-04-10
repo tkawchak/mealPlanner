@@ -111,9 +111,14 @@ function myFunction(response) {
     var arr = JSON.parse(response);
     var i;
 
+	if(arr[0].Name != "")
+	{
     out = "./images/" + arr[0].Name; 
 	$("#photo").attr("src", out);
     console.log(out);
+	}
+	else
+		$("#photo").attr("src", "./icon/hackpsulogo.png");
 }
  $( document ).ready(function() {
      newImage();

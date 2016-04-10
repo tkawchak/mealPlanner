@@ -57,21 +57,22 @@ for ($i = 0; $i < sizeof($files); $i = $i + 1) {
 	{
 		array_push($ids, $meal_id);
 	}
-	$difference = array();
+	//$difference = array();
 	$difference = array_diff($foods, $ids);
 //	foreach($difference as $i)
 //		echo $i . "<br />";
 		
 	if (sizeof($difference) > 1)
-		$image_id = array_rand($difference);
+		$image_id = $difference[array_rand($difference)];
 	else
-		$image_id = 1;
+		foreach($difference as $i)
+			$image_id = $i;
 	
 //	echo "mage: " . $image_id . "<br />";
 	$conn2 = new mysqli($servername, $username, $password, $dbname);
 	$query2 = "SELECT photo_path FROM meal WHERE id=?";
 	$stmt2 = $conn2->prepare($query2);
-	$stmt2->bind_param("i", $difference[$image_id]);
+	$stmt2->bind_param("i", $image_id);
 	$stmt2->execute();
 	$stmt2->bind_result($result2);
 	$stmt2->fetch();

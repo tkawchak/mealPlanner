@@ -18,11 +18,14 @@ $dbname = "mealplanner";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+$food_paths = explode("/", $food);
+echo $food_paths[sizeof($food_paths) - 1];
+
 // query for id of image
 $query = "SELECT id FROM meal WHERE photo_path=?";
 
 $stmt = $conn->prepare($query);
-$stmt->bind_param("s", $food);
+$stmt->bind_param("s", $food_paths[sizeof($food_paths) - 1]);
 $stmt->execute();
 
 $imgID = NULL;

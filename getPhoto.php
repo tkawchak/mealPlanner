@@ -65,7 +65,7 @@ for ($i = 0; $i < sizeof($files); $i = $i + 1) {
 	if (sizeof($difference) > 1)
 		$image_id = array_rand($difference);
 	else
-		$image_id = $difference;
+		$image_id = 1;
 	
 //	echo "mage: " . $image_id . "<br />";
 	$conn2 = new mysqli($servername, $username, $password, $dbname);

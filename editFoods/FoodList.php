@@ -71,7 +71,8 @@
 
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
-
+			$conn1 = new mysqli($servername, $username, $password, $dbname);
+			
 			$query = "SELECT food_id FROM customer_meal WHERE customer_id=?";
 			$stmt = $conn->prepare($query);
 			$stmt->bind_param("i", $user);
@@ -79,45 +80,33 @@
 
 			$id=NULL;
 			$stmt->bind_result($id);
-			$names = array();
-
+			//$names = array();
+			
+			$query = "SELECT name FROM meal where id=?";
+					
+			$stmt1 = $conn1->prepare($query);
+			
 			while($stmt->fetch()) {
 					
-					$query = "SELECT name FROM meal where id=?";
 					
-					$conn1 = new mysqli($servername, $username, $password, $dbname);
-					
-					$stmt1 = $conn1->prepare($query);
 					$stmt1->bind_param("i", $id);
 					$stmt1->execute();
 					
 					$food_name = NULL;
 					$stmt1->bind_result($food_name);
 					$stmt1->fetch();
-					array_push($names, $food_name);
-					echo "<div><p id=\"food\">" . $food_name . "</p><button type=\"submit\" id=\"update\" name=\"update\" class=\"btn btn-danger btn-block\">Delete</button></div>";
-					$conn1->close();
+					//array_push($names, $food_name);
+					echo "<div><p id=\"food\">" . $food_name . "</p><button type=\"submit\" id=\"update\" name=\"update\" onclick=\"del(". $id . ")\" class=\"btn btn-danger btn-block\">Delete</button></div>";
+					
 					
 					
 				}
-			echo json_encode($names);
+			//echo json_encode($names);
 
 			//echo $meal_id_list;
 			$conn->close();
+			$conn1->close();
 ?>
-			<?/*
-		  </form>
-			
-			<form role="form" action="" method="get">
-			<div class="form-group">
-				<label for="usr">Food:</label>
-				<input type="text" class="form-control" required="true" id="food" name="food" placeholder="Enter food to delete">
-			</div>
-			<div class="extraInfo"></div>
-			<div class="userOptions">
-				<button type="submit" id="update" name="update" class="btn btn-success btn-block">Delete</button>
-			</div>
-		  </form>*/?>
 		<div class="col-sm-3"></div>
 	</div>
 </div>
@@ -131,6 +120,12 @@
 	  $.get("removeFood.php", {food: name});
     });
   });
+  
+function del(id) {
+	$.get("removeFood.php", {food: id});
+	reload();
+}
+  
 	/*
 $(function(document).on("pagecreate", function() {
 	$.get("create_food_list.php");

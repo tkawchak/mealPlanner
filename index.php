@@ -33,7 +33,7 @@ $(document).on("pagecreate",function(){
     newImage();
 	
   });
-  $("p").on("swipeleft", function(){
+  $("#photo").on("swipeleft", function(){
 		 
 	newImage();	 
 	 

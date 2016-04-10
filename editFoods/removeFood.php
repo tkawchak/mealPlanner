@@ -2,7 +2,7 @@
 
 <?php
 
-$food = $_GET["food"];
+$food_id = $_GET["food"];
 
 if(isset($_SESSION["user"]))
 	$user = $_SESSION["user"];
@@ -18,10 +18,10 @@ $dbname = "mealplanner";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-$query = "DELETE FROM customer_meal WHERE customer_id=? AND food_id=(SELECT id FROM meal WHERE name=?)";
+$query = "DELETE FROM customer_meal WHERE customer_id=? AND food_id=?";
 $stmt = $conn->prepare($query);
 
-$stmt->bind_param("is", $user, $food);
+$stmt->bind_param("ii", $user, $food_id);
 $stmt->execute();
 
 ?>

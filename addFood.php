@@ -25,8 +25,8 @@ else{
 
 
 // query for id of image
-query = "SELECT id FROM food WHERE image=?";
-$stmt = $conn->prepare(query);
+$query = 'SELECT id FROM meal WHERE image=?';
+$stmt = $conn->prepare($query);
 $stmt->bind_param("s", $food);
 $stmt->execute();
 

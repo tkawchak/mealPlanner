@@ -16,6 +16,7 @@ $stmt->execute();
 
 $id=NULL;
 $stmt->bind_result($id);
+$names = array();
 
 while($stmt->fetch()) {
         
@@ -30,11 +31,12 @@ while($stmt->fetch()) {
 		$food_name = NULL;
 		$stmt1->bind_result($food_name);
 		$stmt1->fetch();
-		echo $food_name . "<br />";
+		array_push($names, $food_name);
 		$conn1->close();
 		
 		
     }
+echo json_encode($names);
 
 //echo $meal_id_list;
 $conn->close();

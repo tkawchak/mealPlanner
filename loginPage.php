@@ -1,11 +1,5 @@
 <?php session_start(); ?>
 
-<?php
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,10 +61,10 @@
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
 		
-		  <form role="form" action="./" method="post">
+		  <form role="form" action="./login.php" method="post">
 			<div class="form-group">
 				<label for="usr">Username:</label>
-				<select>
+				<select name="user">
 				<?php
 					$servername = "localhost";
 					$username = "mealuser";
@@ -104,34 +98,6 @@
 	</div>
 </div>
 </main>
-
-<script>
-$(document).ready(function(){
-    var user = $("#user").text();
-	if (user != " User ")
-	{
-		// user is logged in
-		$(".userOptions").show();
-		$(".noUser").hide();
-		$(".extraInfo").show();
-	}
-	else
-	{
-		// no one logged in
-		$(".userOptions").hide();
-		$(".noUser").show();
-		$(".extraInfo").hide();
-	}
-	
-	// update the place-holders of the form fields
-	
-	$("#newUser").click(function() {
-		$("#newUser").hide();
-		$("#login").hide();
-		$(".extraInfo").show();
-	});
-});
-</script>
 
 </body>
 <!-- CLOSE THE PAGE -->

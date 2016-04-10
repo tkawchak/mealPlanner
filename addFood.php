@@ -35,7 +35,6 @@ $query1 = "INSERT INTO customer_meal (customer_id, food_id) VALUES (1, ?)";
 $stmt1 = $conn1->prepare($query1);
 $stmt1->bind_param("i", $imgID);
 $stmt1->execute();
->>>>>>> 3722c83bbf899c920482a0bcd1777d8d73f6f0a3
 
 $conn1->close();
 

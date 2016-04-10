@@ -129,15 +129,20 @@ function add(a, b)
 
 var xmlhttp = new XMLHttpRequest();
 var out;
-xmlhttp.open("GET", "getPhoto.php", true);
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        myFunction(xmlhttp.responseText);
+    }
+}
+xmlhttp.open("GET", "http://localhost/getPhoto.php", true);
 xmlhttp.send();
 
 function myFunction(response) {
     var arr = JSON.parse(response);
     var i;
 
-    out = arr[0].image 
-	
+    out = arr[0].Name; 
+	$("#photo").attr("src", out);
     console.log(out);
 }
  $( document ).ready(function() {

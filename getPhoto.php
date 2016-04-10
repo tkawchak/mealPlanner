@@ -18,7 +18,7 @@ $image = $images[rand(0, sizeof($images)) - 1];
 
 //echo $image;
 
-$outp = '{"Name":"' . $image . '",';
+$outp = '[{"Name":"' . $image . '"}]';
 
 echo $outp;
 

@@ -16,7 +16,7 @@ for ($i = 0; $i < sizeof($files); $i = $i + 1) {
 // return one of the images
 $image = $images[rand(0, sizeof($images)) - 1];
 
-echo $image;
+//echo $image;
 
 $outp = '{"Name":"' . $image . '",';
 

@@ -128,7 +128,7 @@ function add(a, b)
 <script>
 
 var xmlhttp = new XMLHttpRequest();
-
+var out;
 xmlhttp.open("GET", "getPhoto.php", true);
 xmlhttp.send();
 
@@ -140,20 +140,18 @@ function myFunction(response) {
 	
     console.log(out);
 }
-$( document ).ready(function() {
-    updatePhoto();
-});
+ $( document ).ready(function() {
+     myFunction();
+ });
 
-function updatePhoto() {
-	var ph;
-	$.get( "getPhoto.php", function( data ) {
-		$("#picture").innerHTML(data.image);
-		console.log(data.image);
-		ph = data.image;
-		$("#photo").attr("src", ph);
-	}, "json" );
+// function updatePhoto() {
+	// var photo;
+	// $.get( "getPhoto.php", function( data ) {
+		// photo = data.image;
+		// $("#photo").attr("src", photo);
+	// }, "json" );
 	
-}
+// }
 </script>
 
 

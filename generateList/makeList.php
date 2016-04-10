@@ -1,5 +1,6 @@
-<?php
 
+<?php
+	session_start();
 	$user = NULL;
 	
 	if (isset($_SESSION["user"])) {	
@@ -35,25 +36,29 @@
 	$sql2 = "SELECT ingredient_id, amount FROM food_ingredient WHERE food_id=?";
 	$stmt2 = $conn2->prepare($sql2);
 	$stmt2->bind_param("i", $foodID);
-	$stmt2->bind_result($result2);
+	$stmt2->bind_result($result2, $result2_amount);
 	
 	$conn3 = new mysqli($servername, $username, $password, $dbname);
 	$sql3 = "SELECT name FROM ingredient WHERE id=?";
 	$stmt3 = $conn3->prepare($sql3);
 	$stmt3->bind_param("i", $ingredientID);
 	$stmt3->bind_result($result3);
-	
+	$mail_string = "";
 	for ($i = 0; $i < $num; $i++) {
 		$stmt->fetch();
-		$foodID = $result["food_id"];
+		$foodID = $result;
 		$stmt2->execute();
-		for ($j = 0; $j < sizeof($result2); $j++) {
-			$stmt2->fetch();
-			$ingredientID = $result2["ingredient_id"];
+		while($stmt2->fetch()) {
+			$ingredientID = $result2;
+			$ingredientAmount = $result2_amount;
 			$stmt3->execute();
-			echo $result3;
+			$stmt3->fetch();
+			echo $result3 . "|" . $result2_amount . "|" . $result2 . "<br />";
+			$mail_string .= $result3 . "|" . $result2_amount . "|" . $result2 . "<br />";
 		}
 	}
+	
+	mail("tkawchak@gmail.com","Grocery List", $mail_string);
 	
 	$conn->close();
 	$conn2->close();

@@ -88,9 +88,8 @@
 						$sql = "SELECT id, name FROM customer";
 						$result = $conn->query($sql);
 
-						for($i = 0; $i < $num; $i++)
+						while ($row = $result->fetch_assoc())
 						{
-							$row = $result->fetch_assoc();
 							echo "<option value='" . $row["id"] . "'>" . $row["name"] . "</option>";
 						}
 					$conn->close();

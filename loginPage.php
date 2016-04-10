@@ -66,10 +66,10 @@
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
 		
-		  <form role="form" action="./" method="post">
+		  <form role="form" action="./login.php" method="post">
 			<div class="form-group">
 				<label for="usr">Username:</label>
-				<select>
+				<select name="user">
 				<?php
 					$servername = "localhost";
 					$username = "mealuser";

@@ -62,12 +62,15 @@
 		
 		  <form role="form" action="./" method="post">
 			<div class="form-group">
-				<label for="usr">Username:</label>
-				<input type="text" class="form-control" required="true" id="usr" name="usr" placeholder="Enter your username">
-			</div>
-			<div class="form-group required">
-			  <label for="pwd">Password:</label>
-			  <input type="password" class="form-control" id="pwd" required="true" name="pwd" placeholder="Enter your password">
+				<label for="numMeals">Number of Meals:</label>
+				<select>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
 			</div>
 			<div class="extraInfo"></div>
 			

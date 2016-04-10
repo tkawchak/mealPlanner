@@ -28,24 +28,18 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script>
 $(document).on("pagecreate",function(){
-  $("img").on("swiperight",function(){
-    $(this).hide(); add(1,3);
+  $("#photo").on("swiperight",function(){
+    start(); //myFunction();
   });
   $("p").on("swipeleft", function(){
      $(this).hide(); add(5,6);
   });
 });
-
-function add(a, b)
-{
-	var c = a + b;
-	document.getElementById("answer").innerHTML = c;
-}
 </script>
 
 <script>
         $(document).on("pagecreate", function(){
-            $("img").on("swiperight", function(e){
+            $("p").on("swiperight", function(e){
 
                 // as you have used hyperlink(a tag), this prevent to redirect to another/same page
                 e.preventDefault();
@@ -108,8 +102,9 @@ function add(a, b)
 <main>
 <div class="container">
 	<!-- profile image -->
+	<div id="pageone">
 	<img src="" id="photo" class="img-responsive img-thumbnail img-square center-block" alt="food" style="max-height: 300px;">
-	
+	</div>
 	
 	<div class="row">
 		<div class="col-sm-3"></div>
@@ -127,6 +122,7 @@ function add(a, b)
 
 <script>
 
+function start(){
 var xmlhttp = new XMLHttpRequest();
 var out;
 xmlhttp.onreadystatechange=function() {
@@ -134,9 +130,9 @@ xmlhttp.onreadystatechange=function() {
         myFunction(xmlhttp.responseText);
     }
 }
-xmlhttp.open("GET", "http://localhost/getPhoto.php", true);
+xmlhttp.open("GET", "getPhoto.php", true);
 xmlhttp.send();
-
+}
 function myFunction(response) {
     var arr = JSON.parse(response);
     var i;
@@ -146,7 +142,8 @@ function myFunction(response) {
     console.log(out);
 }
  $( document ).ready(function() {
-     myFunction();
+     start();
+	 myFunction();
  });
 
 // function updatePhoto() {

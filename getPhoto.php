@@ -8,10 +8,8 @@ $files = scandir(getcwd());
 $images = array();
 
 for ($i = 0; $i < sizeof($files); $i = $i + 1) {
-	echo $files[$i] . "<br />";
 	if (strpos($files[$i], ".jpg") != false) {
 		array_push($images, ($files[$i]));
-		echo $files[$i] . "<br />";
 	}
 }
 

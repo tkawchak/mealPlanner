@@ -145,5 +145,26 @@
     // $conn->close();
 ?>
 
+<script>
+HttpUriRequest=new HttpGet(http://apidev.accuweather.com/currentconditions/v1/335315?apikey=c3e7df4f2d6a40698cc75fac1b6a2c83);
+request.addHeader("Accept-Encoding", "gzip");
+httpClient.execute(request);
+</script>
+
+<?php
+	include("../httpful.phar");
+	$uri = "http://apidev.accuweather.com/currentconditions/v1/335315?apikey=c3e7df4f2d6a40698cc75fac1b6a2c83";
+	$response = \Httpful\Request::get($uri)
+		->expectsJson()
+		->send();
+		//$decoded = json_decode($response);
+		
+	//use Httpful\Request;
+	//$response = Request::get($url)->send();
+	//echo $response->WeatherIcon;
+	//echo $response;
+	//echo $decoded->IsDayTime;
+?>
+
 </div>
 </main>

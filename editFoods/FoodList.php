@@ -59,6 +59,7 @@
 	<div class="row">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6 text-justify">
+		
 			<form role="form" action="" method="get">
 			<?php
 			$servername = "localhost";
@@ -72,6 +73,15 @@
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			$conn1 = new mysqli($servername, $username, $password, $dbname);
+			$conn2 = new mysqli($servername, $username, $password, $dbname);
+			
+			$query2 = "SELECT name FROM customer WHERE id=?";
+			$stmt2 = $conn2->prepare($query2);
+			$stmt2->bind_param("i", $_SESSION["user"]);
+			$stmt2->execute();
+			$stmt2->bind_result($result2);
+			$stmt2->fetch();
+			echo "<p>Hello, " . $result2 . "</p>";
 			
 			$query = "SELECT food_id FROM customer_meal WHERE customer_id=?;";
 			$stmt = $conn->prepare($query);

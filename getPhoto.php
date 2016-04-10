@@ -1,13 +1,28 @@
 <?php session_start(); ?>
 
-<?php>
+<?php
 
 // get a list of images in the current directory
-$images = scandir(getcwd(), ".jpg");
+$files = scandir(getcwd());
+
+$images = array();
+
+for ($i = 0; $i < sizeof($files); $i = $i + 1) {
+	echo $files[$i] . "<br />";
+	if (strpos($files[$i], ".jpg") != false) {
+		array_push($images, ($files[$i]));
+		echo $files[$i] . "<br />";
+	}
+}
 
 // return one of the images
-$image = $images[rand(0, sizeof($images)) - 1];
+$image = $images[rand(0, sizeof($images) - 1)];
 
-echo json_encode(array("image"=>"$image));
+//echo $image;
 
-<?>
+$outp = '[{"Name":"' . $image . '"}]';
+
+echo $outp;
+
+//echo json_encode(array("image"=>"$image));
+?>

@@ -19,10 +19,14 @@
             $sql = "SELECT name FROM meal";
             $result = $conn->query($sql);
 
+            $sql2 = "SELECT id FROM ingredient WHERE food_id=1"
+            $result2 = $conn->query($sql);
+
             for($i = 0; $i < $num; $i++)
 			{
 				$row = $result->fetch_assoc();
-				echo "meal" . ($i + 1) . ": ". $row["name"]. "<br>";
+				echo "meal " . ($i + 1) . ": ". $row["name"]. "<br>";
 			}
+
     $conn->close();
 ?>

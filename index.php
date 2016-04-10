@@ -86,7 +86,7 @@ $(document).on("pagecreate",function(){
 			</div>
 			<br/>
 			
-			<img src="" id="photo" class="img-responsive img-thumbnail img-circle center-block" alt="food" style="max-height: 300px;">
+			<img src="" id="photo" class="img-responsive img-rounded center-block" alt="food" style="max-height: 300px;">
 			
 			<br/>
 			<p class="lead text-justify">Please begin on the login page by selecting an account or creating a new one.  Then, you can build your Foodepeida by swiping left and right on the images on this page.  Swiping right will add the food to your Foodepedia, and left will not.  Then, explore the options to generate a list of ingredients and meals.</p>

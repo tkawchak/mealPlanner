@@ -60,13 +60,11 @@
 <!-- MAIN CONTENT FOR THE PAGE GOES HERE -->
 <main>
 <div class="container">
-	<!-- profile image -->
+	
 	<div class="row">
 		<div class="row">
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
-		
-			<div class="page-header userOptions text-center"><h3><?php echo "Welcome $user!";?></h3></div>
 		
 		  <form role="form" action="./" method="post">
 			<div class="form-group">
@@ -93,33 +91,11 @@
 						for($i = 0; $i < $num; $i++)
 						{
 							$row = $result->fetch_assoc();
-							echo "<option value='" . $row["id"] "'>" . $row["name"] . "</option>";
+							echo "<option value='" . $row["id"] . "'>" . $row["name"] . "</option>";
 						}
 					$conn->close();
 				?>
 				</select>
-			<button  type="submit" id="generate" class="btn btn-succsess btn-block">Select User</button>
-			</div>
-			
-			<br/>
-			
-			<div class="noUser">
-				<button type="submit" id="login" name="login" class="btn btn-success btn-block">Login</button>
-				<a id="newUser" class="btn btn-primary btn-block">New User?</a>
-				<button type="submit" id="register" name="register" class="extraInfo btn btn-primary btn-block">Submit</button>
-			</div>
-			<div class="userOptions">
-				<button type="submit" id="update" name="update" class="btn btn-success btn-block">Update Info</button>
-			</div>
-		  </form>
-		  
-		  <br/>
-		  
-		  <form role="form" action="./" method="post">
-			  <div class="userOptions">
-				<button type="submit" id="delete" name="delete" class="btn btn-danger btn-block">Delete Account</button>
-				<button type="submit" id="logout" name="logout" class="btn btn-primary btn-block">Logout</button>
-			  </div>
 		  </form>
 		  
 		</div>

@@ -33,16 +33,16 @@ $imgID = NULL;
 
 $stmt->bind_result($imgID);
 $stmt->fetch();
-
+$conn->close();
 //echo $imgID;
 
-
+$conn1 = new mysqli($servername, $username, $password, $dbname);
 // query to insert into the image into the database
-$query = "INSERT INTO customer_meal (customer_id, food_id) VALUES (?, ?)";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("ii", 1, $imgID);
-$stmt->execute();
+$query1 = "INSERT INTO customer_meal (customer_id, food_id) VALUES (1, ?)";
+$stmt1 = $conn1->prepare($query1);
+$stmt1->bind_param("i", $imgID);
+$stmt1->execute();
 
-$conn->close();
+$conn1->close();
 
 ?>

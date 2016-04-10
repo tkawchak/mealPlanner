@@ -46,36 +46,6 @@ $(document).on("pagecreate",function(){
   });
 });
 </script>
-
-<script>
-        $(document).on("pagecreate", function(){
-            $("p").on("swiperight", function(e){
-
-                // as you have used hyperlink(a tag), this prevent to redirect to another/same page
-                e.preventDefault();
-
-                // get values from textboxs  
-                var uName = $('#userName').val();
-                var mailId = $('#addressemailId').val();
-                var mobNum = $('#userContactNumber').val();
-
-                $.ajax({
-                    url:"localhost/insertFood.php",
-                    type:"GET",
-                    dataType:"json",
-                    data:{type:"insert",Name:uName, Email:mailId, Mob_Num:mobNum},
-                    //type: should be same in server code, otherwise code will not run
-                    ContentType:"application/json",
-                    success: function(response){
-                        alert(JSON.stringify(response));
-                    },
-                    error: function(err){
-                        alert(JSON.stringify(err));
-                    }
-                })
-            });
-        });
-    </script>
 </head>
 
 <!-- CONTENT OF PAGE, CONSULT BOOTSTRAP STYLE GUIDE WHEN ASSIGNING CLASSES -->

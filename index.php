@@ -76,20 +76,23 @@ $(document).on("pagecreate",function(){
 <!-- MAIN CONTENT FOR THE PAGE GOES HERE -->
 <main>
 <div class="container">
-	<!-- profile image -->
-	<div id="pageone">
-	<img src="" id="photo" class="img-responsive img-thumbnail img-square center-block" alt="food" style="max-height: 300px;">
-	</div>
 	
 	<div class="row">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6 text-justify">
-			<h1> <?php echo "Weclcome to mealPlanner, a mobile website that allows you to automate your meal selecting process."; ?> </h1>
-			<p id="answer"><p>
+			<div class="jumbotron">
+			<h1>Foodapedia.</h1>
+			<p>Automate your food selection process.<p>
+			</div>
+			<br/>
+			
+			<img src="" id="photo" class="img-responsive img-thumbnail img-circle center-block" alt="food" style="max-height: 300px;">
+			
+			<br/>
+			<p class="lead text-justify">Please begin on the login page by selecting an account or creating a new one.  Then, you can build your Foodepeida by swiping left and right on the images on this page.  Swiping right will add the food to your Foodepedia, and left will not.  Then, explore the options to generate a list of ingredients and meals.</p>
+			
 		<div class="col-sm-3"></div>
-		<div id="picture">
 		
-		</div>
 	</div>
 </div>
 

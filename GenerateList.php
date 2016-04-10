@@ -43,6 +43,7 @@
         <li ><a href="index.php">Home</a></li>
         <li ><a href="FoodList.php">Food List</a></li>
         <li class="active"><a href="GenerateList.php">Generate List</a></li>
+        <li class=""><a href="loginPage.php">Generate List</a></li>
       </ul>
     </div>
   </div>

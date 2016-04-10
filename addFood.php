@@ -13,14 +13,6 @@ $dbname = "mealplanner";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error){
-	die("Connection failed: " . $conn->connect_error);
-} 
-else{
-  echo "connection worked";
-}
-
 
 // query for id of image
 $query = "SELECT id FROM meal WHERE photo_path=?";
@@ -30,19 +22,21 @@ $stmt->bind_param("s", $food);
 $stmt->execute();
 
 $imgID = NULL;
-
 $stmt->bind_result($imgID);
 $stmt->fetch();
-
+$conn->close();
 //echo $imgID;
 
+// create second connection - why do we need to do this? breaks if don't
+$conn1 = new mysqli($servername, $username, $password, $dbname);
 
 // query to insert into the image into the database
-$query2 = "INSERT INTO customer_meal (customer_id, food_id) VALUES (?, ?)";
-$stmt2 = $conn->prepare($query);
-$stmt2->bind_param("ii", 1, $imgID);
-$stmt2->execute();
+$query1 = "INSERT INTO customer_meal (customer_id, food_id) VALUES (1, ?)";
+$stmt1 = $conn1->prepare($query1);
+$stmt1->bind_param("i", $imgID);
+$stmt1->execute();
+>>>>>>> 3722c83bbf899c920482a0bcd1777d8d73f6f0a3
 
-$conn->close();
+$conn1->close();
 
 ?>

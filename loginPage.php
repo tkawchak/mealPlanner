@@ -95,6 +95,7 @@
 					$conn->close();
 				?>
 				</select>
+				<button  type="submit" id="user" class="btn btn-succsess btn-block"> Select User </button>
 		  </form>
 		  
 		</div>

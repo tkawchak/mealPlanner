@@ -90,8 +90,8 @@ $(document).on("pagecreate",function(){
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Home</a></li>
-        <li><a href="FoodList.php">Food List</a></li>
-		<li><a href="GenerateList.php">Generate List</a></li>
+        <li ><a href="FoodList.php">Food List</a></li>
+        <li ><a href="GenerateList.php">Generate List</a></li>
       </ul>
     </div>
   </div>

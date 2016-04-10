@@ -4,28 +4,41 @@
 
 $food = $_GET["food"];
 
-echo $food;
+$food = str_replace(".jpg", "", $food);
+
+// echo $food;
 
 $servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
+$username = "mealuser";
+$password = "JyCCCFxBr3YQFyuW";
+$dbname = "mealplanner";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($conn->connect_error){
+	die("Connection failed: " . $conn->connect_error);
+} 
+else{
+  echo "connection worked";
 }
 
-$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+// query for id of image
+query = "SELECT id FROM food WHERE image=?";
+$stmt = $conn->prepare(query);
+$stmt->bind_param("s", $food);
+$stmt->execute();
+
+$imgID = NULL;
+
+$stmt->bind_result($imgID);
+$stmt->fetch();
+
+echo $imgID;
+
+
+// query to insert into the image into the database
 
 $conn->close();
 

@@ -151,8 +151,7 @@ function myFunction(response) {
     console.log(out);
 }
  $( document ).ready(function() {
-     start();
-	 myFunction();
+     newImage();
  });
 
 // function updatePhoto() {

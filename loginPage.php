@@ -93,6 +93,16 @@
 				<button  type="submit" id="user" class="btn btn-succsess btn-block"> Select User </button>
 		  </form>
 		  
+		  <form role="form" action="./newUser.php" method="post">
+				<div class="form-group">
+					<label for="usr">Username:</label>
+					<input type="text" class="form-control" required="true" id="usr" name="usr" placeholder="Enter your username">
+					<label for="email">Email:</label>
+					<input type="text" class="form-control" required="true" id="email" name="email" placeholder="Email...">
+					<button  type="submit" id="newUser" class="btn btn-succsess btn-block"> New User </button>
+				</div>
+			</form
+		  
 		</div>
 		<div class="col-sm-4"></div>
 	</div>

@@ -8,11 +8,11 @@
 <meta charset="utf-8">
 
 <!-- WEBPAGE DATA -->
-<title>Food List</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="author" content="">
-<link rel="shortcut icon" href="./websiteIcon.ico">
+<title>Login</title>
+<meta name="description" content="login page">
+<meta name="keywords" content="login, recipedia">
+<meta name="author" content="Tom, Adam, Ben">
+<link rel="shortcut icon" href="../websiteIcon.ico">
 
 <!-- REQUIRED FOR BOOTSTRAP AND JQUERY -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,10 +42,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li ><a href="index.php">Home</a></li>
-        <li class=""><a href="FoodList.php">Food List</a></li>
-        <li ><a href="GenerateList.php">Generate List</a></li>
-        <li class="active"><a href="loginPage.php">Login Page</a></li>
+        <li ><a href="../index.php">Home</a></li>
+        <li class=""><a href="../editFoods/FoodList.php">Food List</a></li>
+        <li ><a href="../generateList/GenerateList.php">Generate List</a></li>
+        <li class="active"><a href="./loginPage.php">Login Page</a></li>
       </ul>
     </div>
   </div>

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,17 +9,16 @@
 
 <!-- WEBPAGE DATA -->
 <title>Food List</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="author" content="">
-<link rel="shortcut icon" href="./websiteIcon.ico">
+<meta name="description" content="edit foods">
+<meta name="keywords" content="foods, recipedia">
+<meta name="author" content="Tom, Adam, Ben">
+<link rel="shortcut icon" href="../websiteIcon.ico">
 
 <!-- REQUIRED FOR BOOTSTRAP AND JQUERY -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<?php session_start(); ?>
 </head>
 
 <!-- CONTENT OF PAGE, CONSULT BOOTSTRAP STYLE GUIDE WHEN ASSIGNING CLASSES -->
@@ -42,9 +43,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li ><a href="index.php">Home</a></li>
-        <li class="active"><a href="FoodList.php">Food List</a></li>
-        <li ><a href="GenerateList.php">Generate List</a></li>
-        <li class=""><a href="loginPage.php">Login Page</a></li>
+        <li class="active"><a href="../FoodList.php">Food List</a></li>
+        <li ><a href="../generateList/GenerateList.php">Generate List</a></li>
+        <li class=""><a href="../login/loginPage.php">Login Page</a></li>
       </ul>
     </div>
   </div>

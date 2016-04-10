@@ -27,6 +27,6 @@ $stmt->execute();
 
 $conn->close();
 
-header( 'Location: ./' ) ;
+header( 'Location: ../' ) ;
 
 ?>

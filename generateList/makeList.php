@@ -114,7 +114,7 @@
 			$ingredientAmount = $result2_amount;
 			$stmt3->execute();
 			$stmt3->fetch();
-			echo $result3 . "|" . $result2_amount . "|" . $result2 . "<br />";
+			echo $result3 . "<br>"."amount: " . $result2_amount . "<br>" ."Ingerdient ID: " . $result2 . "<br>" . "<br/>";
 			$mail_string .= $result3 . "|" . $result2_amount . "|" . $result2 . "<br />";
 		}
 	}

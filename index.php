@@ -127,6 +127,19 @@ function add(a, b)
 
 <script>
 
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.open("GET", "getPhoto.php", true);
+xmlhttp.send();
+
+function myFunction(response) {
+    var arr = JSON.parse(response);
+    var i;
+
+    out = arr[0].image 
+	
+    console.log(out);
+}
 $( document ).ready(function() {
     updatePhoto();
 });

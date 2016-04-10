@@ -7,10 +7,14 @@ $username = "mealuser";
 $password = "JyCCCFxBr3YQFyuW";
 $dbname = "mealplanner";
 
+if(isset($_SESSION["user"]))
+	$user = $_SESSION["user"];
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-$query = "SELECT food_id FROM customer_meal WHERE customer_id=1";
+$query = "SELECT food_id FROM customer_meal WHERE customer_id=?";
+$stmt->bind_param("i", $user);
 $stmt = $conn->prepare($query);
 $stmt->execute();
 

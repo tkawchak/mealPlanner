@@ -123,15 +123,6 @@ function myFunction(response) {
  $( document ).ready(function() {
      newImage();
  });
-
-// function updatePhoto() {
-	// var photo;
-	// $.get( "getPhoto.php", function( data ) {
-		// photo = data.image;
-		// $("#photo").attr("src", photo);
-	// }, "json" );
-	
-// }
 </script>
 
 

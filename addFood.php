@@ -4,6 +4,10 @@
 
 $food = $_GET["food"];
 
+
+if(isset($_SESSION["user"]))
+	$user = $_SESSION["user"];
+
 // echo $food;
 
 $servername = "localhost";
@@ -31,9 +35,9 @@ $conn->close();
 $conn1 = new mysqli($servername, $username, $password, $dbname);
 
 // query to insert into the image into the database
-$query1 = "INSERT INTO customer_meal (customer_id, food_id) VALUES (1, ?)";
+$query1 = "INSERT INTO customer_meal (customer_id, food_id) VALUES (?, ?)";
 $stmt1 = $conn1->prepare($query1);
-$stmt1->bind_param("i", $imgID);
+$stmt1->bind_param("ii", $user, $imgID);
 $stmt1->execute();
 
 $conn1->close();
